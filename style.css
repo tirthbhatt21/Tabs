@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@300&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+::selection {
+  color: #4ec6de;
+  background-color: #0f1624;
+}
+.tabbed {
+  width: 100%;
+  margin: 50px auto;
+}
+.tabbed > input {
+  display: none;
+}
+.tabbed > label {
+  display: block;
+  float: left;
+  padding: 12px 20px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.tabbed > label:hover,
+.tabbed > input:checked + label {
+  background: #74747424;
+  color: #9D0B0E;
+  border: 1px;
+}
+.tabs {
+  clear: both;
+  perspective: 600px;
+}
+.tabs > div {
+  position: absolute;
+  border: 2px solid #3B200D;
+  padding: 10px 30px 30px;
+  line-height: 1.4em;
+  opacity: 0;
+  transform: rotateX(-20deg);
+  transform-origin: top center;
+  transition: opacity 0.3s, transform 1s;
+  z-index: 0;
+  box-shadow: 10px 10px 10px 10px;
+}
+#tab-nav-1:checked ~ .tabs > div:nth-of-type(1),
+#tab-nav-2:checked ~ .tabs > div:nth-of-type(2),
+#tab-nav-3:checked ~ .tabs > div:nth-of-type(3),
+#tab-nav-4:checked ~ .tabs > div:nth-of-type(4),
+#tab-nav-5:checked ~ .tabs > div:nth-of-type(5),
+#tab-nav-6:checked ~ .tabs > div:nth-of-type(6),
+#tab-nav-7:checked ~ .tabs > div:nth-of-type(7)
+ {
+  transform: rotateX(0);
+  opacity: 1;
+  z-index: 1;
+}
+p
+{
+  color: #3B200D;
+}
+main
+{
+  position: relative;
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+  .tabbed {
+    width: 400px;
+  }
+  .tabbed > label {
+    display: none;
+  }
+  .tabs > div {
+    width: 400px;
+    border: none;
+    padding: 0;
+    opacity: 1;
+    position: relative;
+    transform: none;
+    margin-bottom: 60px;
+  }
+  .tabs > div h2 {
+    border-bottom: 2px solid #4ec6de;
+    padding-bottom: 0.5em;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+section
+{
+  width: 100%;
+  height: 700px;
+  background: #fffcee;
+  color: #3B200D;
+  font-family: 'Arima', cursive;
+  font-weight: 600;
+}
